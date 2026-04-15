@@ -1,0 +1,25 @@
+\section{Results and Conclusion}
+\label{sec:conclusion}
+This study highlighted several vulnerabilities of consumer-grade GNSS receivers. Table \ref{tab:metrics_summary} summarizes the overall performance metrics, confirming the Open Sky scenario as the ideal one for optimal reception. In contrast, introducing electromagnetic shielding and human proximity (during the Aluminum and Body trials) induced drastic attenuation and compromised tracking. The "dynamic" tests also mirrored these challenges: while the moving Bus retained an adequate constellation layout despite reduced power, the Walking path suffered from an "urban canyon" effect, leading to heavy fluctuations and sharp HDOP peaks. We also turned on battery-saving mode multiple times during these experiments, but it showed no predictable (or even significant) impact. Furthermore, our cyber-spoofing simulations proved the ease of manipulating spatial coordinates; although limited by the absence of raw RF transmission, these attacks still left detectable traces. Finally, the collected data confirm that commercial navigation remains highly sensitive to a combination of environmental blockages, multipath interference and software-level attacks.
+\\
+\begin{table}[htbp]
+    \centering
+    \caption{Signal Quality and Satellite Geometry}
+    \label{tab:metrics_summary}
+    \resizebox{\columnwidth}{!}{%
+    \begin{tabular}{lcccc}
+        \toprule
+        \multirow{2}{*}{\textbf{Scenario}} & \multicolumn{2}{c}{\textbf{C/N0 (dB-Hz)}} & \multicolumn{2}{c}{\textbf{HDOP}} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        & \textbf{Mean} & \textbf{Std. Dev.} & \textbf{Mean} & \textbf{Std. Dev.} \\
+        \midrule
+        Open Sky & 35.88 & 5.44 & 1.00 & 0.10 \\
+        Outdoor Walking & 27.91 & 5.18 & 1.09 & 0.23 \\
+        Outdoor Bus & 27.08 & 3.58 & 1.05 & 0.25 \\
+        Body Interference & 32.96 & 6.94 & 1.10 & 0.12 \\
+        Aluminum Shielding & 26.67 & 4.37 & 2.08 & 0.65 \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+

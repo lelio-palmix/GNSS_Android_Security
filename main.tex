@@ -1,0 +1,142 @@
+% \newcommand{\compacttitlespacing}{0} %disable when we need room for authors
+\documentclass[sigconf]{acmart}
+\settopmatter{printacmref=false}
+% defining the \BibTeX command - from Oren Patashnik's original BibTeX documentation.
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08emT\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% --- RIMOZIONE COMPLETA COPYRIGHT E SPAZI VUOTI ---
+\setcopyright{none}                % Rimuove il testo del copyright (c)
+\settopmatter{printacmref=false}   % Rimuove il blocco "ACM Reference Format"
+\renewcommand\footnotetextcopyrightpermission[1]{} % Rimuove lo spazio del riquadro in basso
+\acmDOI{}                          % Rimuove il link DOI
+\acmISBN{}                         % Rimuove l'ISBN
+\acmPrice{}                        % Rimuove il prezzo
+\acmConference{Wireless Security Report - GNSS}{Torino}{2026} % 
+% -------------------------------------------------
+\usepackage{nicefrac}
+\usepackage{siunitx}
+\usepackage{array,framed}
+\usepackage{booktabs}
+\usepackage{
+  color,
+  float,
+  epsfig,
+  wrapfig,
+  graphics,
+  graphicx,
+  subcaption
+}
+% \usepackage[dvipsnames]{xcolor}
+\usepackage{textcomp,amssymb}
+\usepackage{setspace}
+% \usepackage{amsfonts}
+\usepackage{latexsym,fancyhdr,url}
+\usepackage{enumerate}
+\usepackage{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{graphics}
+\usepackage{xparse} % argument parsing -- \edist
+\usepackage{xspace}
+\usepackage{multirow}
+\usepackage{csvsimple}
+\usepackage{balance}
+% \usepackage{flushend}
+% \usepackage{mathptmx,avant}
+
+%%%% Tikz variables, pgfplot
+\usepackage{
+  tikz,
+  pgfplots,
+  pgfplotstable
+}
+
+
+\usetikzlibrary{
+  shapes.geometric,
+  arrows,
+  external,
+  pgfplots.groupplots,
+  matrix
+}
+
+\pgfplotsset{compat=1.9}
+% \tikzexternalize[prefix=images/]
+% \tikzexternalenable
+
+%\pagenumbering{arabic}
+% \pagestyle{plain}
+
+\usepackage{mathtools,}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+% \setmathfont{Latin Modern Math}[version=lm]
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+% \DeclareSymbolFont{operators}{T1}{cmr}{m}{n}
+% \DeclareSymbolFont{letters}{OML}{cmm}{m}{it}
+% \DeclareSymbolFont{symbols}{OMS}{cmsy}{m}{n}
+% \DeclareSymbolFont{largesymbols}{OMX}{cmex}{m}{n}
+
+% \usepackage{times}
+
+% \setmathcal{Arial}
+
+% TO deal with the weird flow of boxes
+% \brokenpenalty=1000
+% \clubpenalty=1000
+% \widowpenalty=10
+\DeclareGraphicsExtensions{%
+    .png,.PNG,%
+    .pdf,.PDF,%
+    .jpg,.mps,.jpeg,.jbig2,.jb2,.JPG,.JPEG,.JBIG2,.JB2}
+
+\input{defs}
+\setlength{\belowcaptionskip}{-10pt} 
+\setlength{\footskip}{30pt}
+\setlength{\abovecaptionskip}{5pt plus 3pt minus 2pt}
+\usepackage{hyperref}
+\usepackage[switch]{lineno}
+\linenumbers
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%\fontfamily{lmr}\selectfont
+% \def\thetitle{A Practical Way to Generate Strong Keys from Noisy Data}
+\fancyhead{}
+\def\thetitle{GNSS Lab Report - Ri Boss Di Wireless}
+\title{\thetitle}
+
+\author{Daniele Canu, Lelio Palmisano, Fabrizio Pinna, Vincenzo Pistuddi}
+\affiliation{\small{Politecnico di Torino}}
+\date{}
+
+
+\input{abstract}
+\maketitle
+\keywords{LaTeX template, ACM CCS, ACM}
+
+% Section I
+\input{intro}    % basic introduction
+%\input{background}
+\input{methodology}
+%\input{spoofing}
+\input{measurements}
+\input{results}
+\input{conclusion}
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{bib}
+
+% % --- Appendix ---%
+\appendix
+\input{appendix}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

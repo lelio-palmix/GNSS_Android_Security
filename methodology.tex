@@ -1,0 +1,21 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Methodology}
+\label{sec:methodology}
+
+Our experimental workflow consisted of field data acquisition and software-based processing of the collected logs.
+
+\subsection{Data Acquisition and Scenarios}
+Raw GNSS data were collected using an Android smartphone, thanks to the \textit{GNSSLogger} analysis app \cite{GNSS_logger}. By activating the ``Timed Logging'' feature, we ensured exact time observation windows of 300 seconds for each conducted experiment. To evaluate performance limits, measurements were conducted in different environments:
+\begin{itemize}
+\item \textbf{Static:} \textit{Open Sky} (baseline)
+\item \textbf{Dynamic:} \textit{Walking} and \textit{Bus} (tracking stability under mobility within an urban canyon).
+\item \textbf{Extreme:} \textit{Aluminium shielding} and \textit{Body interference}  (resilience against signal degradation).
+\end{itemize}
+
+\subsection{Analytical Processing and Spoofing}
+Log files captured with GNSSLogger were processed using the \textit{GNSS Analysis MATLAB Tool} \cite{GPS_Measurement_tools} by editing the \texttt{ProcessGnssMeasScript} script. This setup allowed for the extraction of positioning and quality metrics, as well as the execution of cyber-spoofing simulations. Specifically, the script emulates a spoofing attack by manipulating the extracted satellite measurements, allowing us to observe how false data shift the calculated coordinates from a set ground-truth.
+
+% \subsection{Signal Filtering}
+% As part of the laboratory activities, we modified the \texttt{SetDataFilter} script to filter the raw data, testing two custom filters provided by the environment.
+% First, we integrated the constellation filter (\texttt{ConstellationType == 1 | ConstellationType == 6}) to restrict the tracking exclusively to GPS and Galileo satellites.
+% Furthermore, we tested a signal quality threshold by filtering out measurements with a Carrier-over-Noise density ratio below 20 dB-Hz (\texttt{Cn0DbHz > 20}). While applying this filter creates a "cleaner" baseline by dropping severely attenuated signals or multipath reflections, we still kept these low-quality observables in our main analysis.
