@@ -1,4 +1,4 @@
-# GNSS Security Evalutaion on Android
+# GNSS Security Evaluation on Android
 
 ![Polito Logo](logo_polito.jpg)
 
@@ -29,6 +29,3 @@ The logs were manipulated using MATLAB to inject falsified coordinates and tempo
 ## Tools & Methodology
 * **Data Logging:** Google GNSSLogger (Android)
 * **Data Processing & Spoofing:** MATLAB (Google GPS Measurement Tools)
-
----
-*Disclaimer: This repository is for academic and educational purposes only. The spoofing attacks analyzed are strictly software-based simulations (data manipulation) and do not involve illegal over-the-air RF transmissions.*
